@@ -1,0 +1,43 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+
+<asp:GridView runat="server" Font-Names="Arial" Font-Size="11pt"   
+        Width="97%" HeaderStyle-BackColor="Gainsboro" HorizontalAlign="Left" 
+        AlternatingRowStyle-BackColor="AliceBlue" 
+        HeaderStyle-HorizontalAlign="Left" RowStyle-BackColor="AliceBlue" RowStyle-Height="28px"
+        CellSpacing="2">   
+<AlternatingRowStyle BackColor="AliceBlue"></AlternatingRowStyle>
+
+        <HeaderStyle Height="32px" ForeColor="Black" />
+    
+<RowStyle BackColor="AliceBlue" Height="28px"></RowStyle>
+    
+</asp:GridView>
+
+<asp:LinkButton runat="server" Font-Names="Arial" ForeColor="Blue"
+                Font-Size="11pt"></asp:LinkButton>
+
+--%>
+<asp:GridView  runat="server" AutoGenerateColumns="False" ForeColor="Black"
+            Width="100%" Font-Names="Arial"  HeaderStyle-BackColor="#4b6c9e"  RowStyle-Height="28px" 
+            SelectedRowStyle-BackColor="LightGreen" SelectedRowStyle-ForeColor="Black" BackColor="White"
+        CellSpacing="2">  
+  <HeaderStyle Height="32px" ForeColor="Black" HorizontalAlign="Left"/>
+  <FooterStyle BackColor="#4b6c9e"/>
+   <RowStyle  Height="28px"></RowStyle>     
+    </asp:GridView> 
+
+<asp:Label  runat="server" Font-Size="11pt" style="font-family: Arial" ></asp:Label>
+

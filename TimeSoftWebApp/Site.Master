@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="RnDSoftWebApp.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+  
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    &nbsp;</h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="LoginView1" runat="server" EnableViewState="False" >
+                    <AnonymousTemplate>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" />
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome:&nbsp;<asp:LoginName ID="LoginName1" runat="server" />
+                        &nbsp;&nbsp;[<asp:LoginStatus ID="LoginStatus4" runat="server" 
+                            LogoutAction="RedirectToLoginPage" LogoutPageUrl="~/Login.aspx" />]
+                        <asp:LinkButton ID="LinkButtonChangePassword" runat="server" 
+                            onclick="LinkButtonChangePassword_Click">Change Password</asp:LinkButton>
+                        &nbsp;&nbsp;
+                    </LoggedInTemplate>
+                </asp:LoginView>
+                &nbsp;</div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/AddEditUser.aspx" Text="Admin"/>
+                         <asp:MenuItem NavigateUrl="~/ReferenceTables.aspx" Text="Reference Tables"/>
+                          <asp:MenuItem NavigateUrl="~/AdminReports.aspx" Text="Excel Reports"/>
+                         <asp:MenuItem NavigateUrl="~/EmployeeReport.aspx" Text="Employee Report"/>
+                         <asp:MenuItem NavigateUrl="~/ManagementReport.aspx" Text="Management Reports"/>
+                        
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
